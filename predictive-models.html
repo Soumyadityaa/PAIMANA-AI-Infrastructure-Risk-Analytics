@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predictive Models | PAIMANA AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">PAIMANA <span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Monitoring Dashboard</a></li>
+            <li><a href="predictive-models.html" class="active">Predictive Models</a></li>
+            <li><a href="benchmarking.html">Benchmarking</a></li>
+            <li><a href="early-warnings.html">Early Warnings</a></li>
+            <li><a href="prescriptive-admin.html">Prescriptive & Admin</a></li>
+            <li><a href="llm-assistant.html">LLM Assistant</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <h2>Predictive Analytics Architecture</h2>
+        <p class="subtitle">Machine Learning forecasts and cost escalation driver mapping.</p>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>Cost Escalation Driver Analysis (XGBoost)</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 15px;">Global feature importance indicating the primary historical drivers of cost overruns.</p>
+                <div class="chart-container">
+                    <canvas id="driverChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Time Overrun Prediction Framework</h3>
+                <p style="margin-bottom: 15px; color: var(--text-main); line-height: 1.6;">The Time Overrun model utilizes historical milestone completion rates, implementing agency performance indexes, and regional land acquisition data to forecast schedule deviations before they materialize.</p>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+                    <h4 style="margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Model Parameters & Health</h4>
+                    <ul style="margin-left: 20px; color: var(--text-main); line-height: 2;">
+                        <li><strong>Algorithm:</strong> Gradient Boosting Regressor (LightGBM)</li>
+                        <li><strong>Target Variable:</strong> Months Delayed</li>
+                        <li><strong>Mean Absolute Error (MAE):</strong> 2.4 Months</li>
+                        <li><strong>R-Squared Score:</strong> 0.81 <span class="badge low" style="margin-left: 10px;">High Confidence</span></li>
+                        <li><strong>Last Trained:</strong> April 2026 (via CUF Pipeline)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

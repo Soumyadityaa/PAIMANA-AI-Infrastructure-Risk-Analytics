@@ -1,0 +1,1 @@
+{"features": ["historical_reliability_score", "sector_Water Resources", "original_cost_crore", "reported_roadblocks_Land Acquisition", "physical_progress_pct"], "weights": [0.325, 0.25, 0.197, 0.042, 0.033], "xgb_accuracy": 89.2, "baseline_accuracy": 45.4}

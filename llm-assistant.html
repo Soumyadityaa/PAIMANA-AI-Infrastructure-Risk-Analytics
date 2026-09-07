@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Assistant | PAIMANA AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">PAIMANA <span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Monitoring Dashboard</a></li>
+            <li><a href="predictive-models.html">Predictive Models</a></li>
+            <li><a href="benchmarking.html">Benchmarking</a></li>
+            <li><a href="early-warnings.html">Early Warnings</a></li>
+            <li><a href="prescriptive-admin.html">Prescriptive & Admin</a></li>
+            <li><a href="llm-assistant.html" class="active">LLM Assistant</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <h2>LLM-Enabled Project Intelligence</h2>
+        <p class="subtitle">Query the PAIMANA infrastructure ecosystem using Natural Language Processing (NLP).</p>
+        
+        <div class="chat-container">
+            <!-- Chat History Area -->
+            <div class="chat-history" id="chat-history">
+                <div class="msg bot">
+                    <strong>PAIMANA Terminal Initialize...</strong><br><br>
+                    Welcome to the AI Assistant. I have read-access to the April 2026 dataset (1,981 projects). You can ask me to:
+                    <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px; line-height: 1.6;">
+                        <li>Identify high-risk projects by sector.</li>
+                        <li>Analyze root causes of cost overruns.</li>
+                        <li>Summarize financial health across states.</li>
+                    </ul>
+                    How can I assist your monitoring today?
+                </div>
+            </div>
+            
+            <!-- Chat Input Area -->
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Try: 'Which transport projects are facing severe land acquisition delays?'">
+                <button onclick="sendChatMessage()">Send Request</button>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Early Warnings | PAIMANA AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">PAIMANA <span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Monitoring Dashboard</a></li>
+            <li><a href="predictive-models.html">Predictive Models</a></li>
+            <li><a href="benchmarking.html">Benchmarking</a></li>
+            <li><a href="early-warnings.html" class="active">Early Warnings</a></li>
+            <li><a href="prescriptive-admin.html">Prescriptive & Admin</a></li>
+            <li><a href="llm-assistant.html">LLM Assistant</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h2>Early Warning Alert System</h2>
+            <button class="export-btn" style="background: #0f172a;" onclick="window.print()">Export Alerts List</button>
+        </div>
+        <p class="subtitle">Automated real-time flags for projects predicted to experience severe implementation risks.</p>
+        
+        <div class="filters-bar">
+            <select id="alert-filter-risk" onchange="loadAlertsPage()">
+                <option value="All">All Active Alerts</option>
+                <option value="high">Critical Risk (Red)</option>
+                <option value="medium">Warning (Yellow)</option>
+            </select>
+        </div>
+
+        <!-- This container is populated dynamically by JS -->
+        <div id="alerts-page-container"></div>
+
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

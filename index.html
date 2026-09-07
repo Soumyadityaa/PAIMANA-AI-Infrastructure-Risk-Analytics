@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | PAIMANA AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">PAIMANA <span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Monitoring Dashboard</a></li>
+            <li><a href="predictive-models.html">Predictive Models</a></li>
+            <li><a href="benchmarking.html">Benchmarking</a></li>
+            <li><a href="early-warnings.html">Early Warnings</a></li>
+            <li><a href="prescriptive-admin.html">Prescriptive & Admin</a></li>
+            <li><a href="llm-assistant.html">LLM Assistant</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content id added for PDF targeting -->
+    <main class="main-content" id="report-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h2>Executive Monitoring Dashboard</h2>
+            <!-- FEATURE 3: PDF Export Button -->
+            <button class="export-btn" onclick="exportToPDF()">Export Monthly Report (PDF)</button>
+        </div>
+        <p class="subtitle">Predictive analytics and holistic overview of Central Sector Infrastructure Projects.</p>
+        
+       <!-- Filters Bar -->
+<div class="filters-bar">
+    <select id="filter-sector">
+        <option value="All">All Sectors</option>
+        <option value="Aviation">Aviation</option>
+        <option value="Coal">Coal</option>
+        <option value="Electricity Generation">Electricity Generation</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Oil & Gas">Oil & Gas</option>
+        <option value="Railways">Railways</option>
+        <option value="Roads & Highways">Roads & Highways</option>
+        <option value="Urban Public Transport">Urban Public Transport</option>
+    </select>
+    <select id="filter-risk">
+        <option value="All">All Risk Levels</option>
+        <option value="high">Critical Risk (Red)</option>
+        <option value="medium">Warning (Yellow)</option>
+        <option value="low">On Track (Green)</option>
+    </select>
+    <input type="text" id="search-input" placeholder="Search by Project ID or Name...">
+</div>
+
+<!-- KPI Cards -->
+<div class="card"><div class="value" id="kpi-total">0</div></div>
+<div class="card"><div class="value" id="kpi-cost-overrun">₹0 Cr</div></div>
+<div class="card"><div class="value" id="kpi-high-risk">0</div></div>
+
+<!-- Financial Overview Card -->
+<div class="card">
+    <h3>Financial Overview (Lakh Crore ₹)</h3>
+    <div class="chart-container" style="position: relative; height: 260px;">
+        <canvas id="financialOverviewChart"></canvas>
+    </div>
+</div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Total Active Projects</h3>
+                <div class="value" id="kpi-total">1,981</div>
+            </div>
+            <div class="card">
+                <h3>Anticipated Cost Overrun</h3>
+                <div class="value" style="color: var(--danger)">₹5.65 L Cr</div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--danger);">
+                <h3>Projects at High Risk</h3>
+                <div class="value" id="kpi-high-risk">342</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Financial Overview (Lakh Crore ₹)</h3>
+                <div class="chart-container"><canvas id="financialChart"></canvas></div>
+            </div>
+            <div class="card">
+                <!-- FEATURE 4: Interactive Map Container -->
+                <h3>Geographical Risk Distribution</h3>
+                <div id="riskMap" style="height: 300px; border-radius: 8px; border: 1px solid var(--border);"></div>
+            </div>
+        </div>
+
+        <div class="grid-70-30">
+            <div class="card">
+                <h3>Project Risk Scoring Engine (Click Row for Deep-Dive)</h3>
+                <div style="overflow-x: auto;">
+                    <table class="interactive-table">
+                        <thead>
+                            <tr>
+                                <th>Project Details</th>
+                                <th>Sector</th>
+                                <th>Progress</th>
+                                <th>Risk Score</th>
+                                <th>Predicted Delay</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboard-table-body">
+                            <!-- Loaded via JS -->
+                        </tbody>
+                    </table>
+                    <!-- Add Pagination Container -->
+        <div id="pagination-controls" class="pagination"></div>
+                </div>
+            </div>
+           <div class="card" style="grid-column: span 1;">
+    <h3 style="font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; margin-bottom: 15px;">Live Monitoring Ticker</h3>
+    <!-- Ensure this ID is present -->
+    <div id="live-ticker-feed" style="max-height: 500px; overflow-y: auto; padding-right: 10px;">
+        Loading live feed...
+    </div>
+</div>
+        </div>
+    </main>
+
+    <!-- FEATURE 2: Deep-Dive Project Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title" style="margin-bottom: 15px; color: var(--primary);">Project Details</h3>
+            <div id="modal-body" style="line-height: 1.6; color: var(--text-main);"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

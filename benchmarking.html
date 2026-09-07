@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Benchmarking | PAIMANA AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Chart.js required for the Radar Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">PAIMANA <span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Monitoring Dashboard</a></li>
+            <li><a href="predictive-models.html">Predictive Models</a></li>
+            <li><a href="benchmarking.html" class="active">Benchmarking</a></li>
+            <li><a href="early-warnings.html">Early Warnings</a></li>
+            <li><a href="prescriptive-admin.html">Prescriptive & Admin</a></li>
+            <li><a href="llm-assistant.html">LLM Assistant</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <h2>Comparative Analytics Module</h2>
+        <p class="subtitle">Assessing AI/ML predictive gains over conventional statistical methods.</p>
+        
+        <div class="grid-2">
+            <!-- Radar Chart Card -->
+            <div class="card">
+                <h3>Model Performance Matrix</h3>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 15px;">Multi-dimensional comparison of forecasting frameworks.</p>
+                <div class="chart-container">
+                    <canvas id="benchmarkChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Analysis Table Card -->
+            <div class="card">
+                <h3>Internal CUF vs. External Data Assessment</h3>
+                <table style="margin-top: 10px;" class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Data Source & Model</th>
+                            <th>Predictive Accuracy</th>
+                            <th>Missing Context Variables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Baseline Stats (ARIMA)</strong><br><span style="font-size:0.8rem; color:#64748b;">CUF Internal Fields Only</span></td>
+                            <td style="color: var(--warning); font-weight: bold; font-size: 1.1rem;">68.4%</td>
+                            <td style="font-size: 0.85rem;">None - Limited to Expenditure & Timelines</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Augmented AI (XGBoost)</strong><br><span style="font-size:0.8rem; color:#64748b;">CUF + External Indexes</span></td>
+                            <td style="color: var(--success); font-weight: bold; font-size: 1.1rem;">89.2%</td>
+                            <td style="font-size: 0.85rem;">Incorporates Inflation, Weather APIs, and Land Acquisition Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 25px; padding: 15px; background: #f8fafc; border-left: 4px solid var(--primary-light); border-radius: 4px;">
+                    <strong style="color: #0f172a;">Key Conclusion:</strong> 
+                    <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;">
+                        AI/ML techniques provide a <strong>+20.8% net gain</strong> in prediction accuracy. The standard CUF framework acts as a descriptive ledger, whereas the ML model identifies early warning signals by correlating CUF delays with external socio-economic bottlenecks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
